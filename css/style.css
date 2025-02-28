@@ -1,0 +1,382 @@
+/* 全局样式 */
+:root {
+    --primary-color: #00a8ff;
+    --secondary-color: #192a56;
+    --text-color: #2f3640;
+    --bg-color: #f5f6fa;
+    --border-color: #dcdde1;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-1: linear-gradient(135deg, #00a8ff, #0097e6);
+    --gradient-2: linear-gradient(135deg, #0097e6, #273c75);
+    --gradient-3: linear-gradient(135deg, #273c75, #192a56);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 头部样式 */
+.header {
+    background: var(--gradient);
+    color: white;
+    padding: 40px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%);
+    background-size: 20px 20px;
+    opacity: 0.1;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.basic-info, .job-intention {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.basic-info span, .job-intention span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.basic-info span:hover, .job-intention span:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* 主要内容样式 */
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient);
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h3 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gradient);
+}
+
+/* 个人优势样式 */
+.profile {
+    padding: 40px;
+    background: #fff;
+    position: relative;
+}
+
+.profile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient);
+}
+
+.advantage-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.advantage-item {
+    position: relative;
+    margin-bottom: 0;
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.advantage-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.advantage-item:nth-child(1)::before {
+    background: var(--gradient-1);
+}
+
+.advantage-item:nth-child(2)::before {
+    background: var(--gradient-2);
+}
+
+.advantage-item:nth-child(3)::before {
+    background: var(--gradient-3);
+}
+
+.advantage-item::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.advantage-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-item:hover::after {
+    opacity: 1;
+}
+
+.advantage-item h4 {
+    position: relative;
+    color: var(--secondary-color);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    padding-left: 35px;
+}
+
+.advantage-item h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background: var(--gradient);
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+.advantage-item p {
+    color: #666;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+}
+
+/* 工作经历和项目经历样式 */
+.experience-item, .project-item {
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 8px;
+    background: linear-gradient(to right, #f8f9fa, white);
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.company-header, .project-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.company-header h4, .project-header h4 {
+    color: var(--secondary-color);
+    font-size: 1.3em;
+    margin-right: auto;
+}
+
+.position, .date {
+    background: var(--bg-color);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    color: var(--primary-color);
+}
+
+.job-desc, .project-desc {
+    margin-bottom: 15px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.achievements h5, .work-content h5 {
+    color: var(--secondary-color);
+    margin: 15px 0 10px;
+    font-size: 1.1em;
+}
+
+.achievement-group {
+    margin: 15px 0;
+}
+
+.achievement-group h6 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+/* 教育经历样式 */
+.education-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.education-item h4 {
+    color: var(--secondary-color);
+    font-size: 1.2em;
+}
+
+.degree, .major {
+    background: var(--bg-color);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+/* 页脚样式 */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #666;
+    margin-top: 50px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .header {
+        padding: 30px 0;
+    }
+
+    .basic-info, .job-intention {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .company-header, .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .advantage-items {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .advantage-item {
+        padding: 25px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+section:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+section:nth-child(4) {
+    animation-delay: 0.6s;
+} 
