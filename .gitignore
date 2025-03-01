@@ -3,3 +3,9 @@ node_modules/
 .env
 .vscode/
 *.log
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+# Local Netlify folder
+.netlify
