@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>产品经理简历 - 李承骏</title>
     <link rel="stylesheet" href="css/modern.css">
+    <script src="js/meteor.js"></script>
 </head>
 <body>
+    <canvas id="meteorCanvas"></canvas>
     <div class="resume-container">
         <!-- 头部信息 -->
         <header class="header">
@@ -29,7 +31,7 @@
             <!-- 个人优势 -->
             <section class="section">
                 <div class="section-header">
-                    <div class="icon">🌟</div>
+                    <div class="icon icon-advantage"></div>
                     <h2>个人优势</h2>
                 </div>
                 <div class="content">
@@ -51,7 +53,7 @@
             <!-- 工作经历 -->
             <section class="section">
                 <div class="section-header">
-                    <div class="icon">💼</div>
+                    <div class="icon icon-work"></div>
                     <h2>工作经历</h2>
                 </div>
 
@@ -122,7 +124,7 @@
             <!-- 项目经历 -->
             <section class="section">
                 <div class="section-header">
-                    <div class="icon">🚀</div>
+                    <div class="icon icon-project"></div>
                     <h2>项目经历</h2>
                 </div>
 
@@ -218,21 +220,24 @@
                     
                     <div class="content">
                         <h4>项目介绍</h4>
-                        <p>为深入实施科技强警战略，规范全市公安科技信息化项目管理工作，促进项目管理科学、健康发展，提升科技信息化建设的集成水平、应用效率和实战效益，根据《厦门市公安局科技信息化项目管理办法》构建厦门市公安局科技信息化项目综合管理模块，以实现我市公安科技信息化项目的全程在线管理。</p>
-                        
-                        <h4>工作职责</h4>
-                        <ul>
-                            <li>业务调研：由于公安局客户工作繁忙，根据实际情况，首先对接了项目立项阶段的需求，确定下系统应用角色，组织架构的获取方式，以及各个部门在实际应用场景中需要不同的项目立项过程。</li>
-                            <li>应用架构设计：根据公司目前现有的低代码平台，以及公安方面特有的登陆方式，确定了本系统在项目立项阶段时需要建设的功能模块，如项目申报、项目初审、专家评审、项目入库等模块。</li>
-                            <li>原型设计：将现阶段需要建设的功能模块，例入到需求池中，根据需求优先级，以及公司目前的低代码平台，先后设计出对应需求的低保真原型。</li>
-                            <li>需求评审：推动跨部门需求评审会议，详细阐述每个功能点的需求，并与开发、实施、测试团队讨论如何利用低代码平台快速配置对应的功能模块。</li>
-                            <li>项目管理：管理5人团队，确保需求按照预定计划产出，并监控开发进度，保证项目按时完成。</li>
-                        </ul>
+                        <p>贯彻《厦门市公安局科技信息化项目管理办法》，解决传统纸质审批效率低、跨部门协同难问题，构建覆盖项目申报→初审→专家评审→入库的全流程线上管理系统。</p>
                         
                         <h4>项目成果</h4>
                         <ul>
-                            <li>2个月完成项目立项阶段功能的落地，利用公司现有的低代码平台，快速开发并构建了系统中对应的模块，有效提升了开发效率并降低了成本。</li>
-                            <li>系统实现了项目立项流程的灵活性，确保了不同业务场景下的项目能够高效、顺畅地进行项目立项。</li>
+                            <li>系统从0到1搭建：
+                                <ul>
+                                    <li>基于公司低代码平台完成立项管理模块开发，3个月内实现多个部门差异化流程线上化，100%取代纸质审批；</li>
+                                    <li>设计多角色权限体系，对接公安内网统一身份认证，独立审批流配置；</li>
+                                    <li>建立动态表单引擎，灵活适配内部申报、政务申报等多种项目属性，字段可配置率达90%。</li>
+                                </ul>
+                            </li>
+                            <li>全流程优化落地：
+                                <ul>
+                                    <li>主导业务调研与原型设计，梳理23项关键需求，需求评审通过率100%；</li>
+                                    <li>推动敏捷开发模式，组织开发、测试、业务方三方协同，需求交付周期压缩至平均3天/模块；</li>
+                                    <li>通过低代码平台复用组件库，开发人力投入减少60%。</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -241,7 +246,7 @@
             <!-- 教育经历 -->
             <section class="section">
                 <div class="section-header">
-                    <div class="icon">🎓</div>
+                    <div class="icon icon-education"></div>
                     <h2>教育经历</h2>
                 </div>
 

@@ -17,22 +17,44 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Canvas样式 */
+#meteorCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.8;
+    background-color: transparent;
 }
 
 .resume-container {
+    position: relative;
+    z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px;
+    width: 80%;
+    background: rgba(10, 10, 10, 0.7);
+    min-height: 100vh;
 }
 
 /* Header Styles */
 .header {
     background: var(--header-bg);
     border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 40px;
+    margin-bottom: 40px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(46, 246, 46, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .profile-section {
@@ -93,6 +115,39 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-header .icon::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-header .icon.icon-advantage::before {
+    content: '★';
+    color: var(--primary-color);
+    font-size: 22px;
+}
+
+.section-header .icon.icon-work::before {
+    content: '💼';
+    font-size: 20px;
+}
+
+.section-header .icon.icon-project::before {
+    content: '🚀';
+    font-size: 20px;
+}
+
+.section-header .icon.icon-education::before {
+    content: '🎓';
+    font-size: 20px;
 }
 
 .section-header h2 {
@@ -197,6 +252,17 @@ body {
 
 .extra {
     color: rgba(255, 255, 255, 0.6);
+}
+
+/* 二级标题图标 */
+.content h4::before {
+    content: '▸';
+    display: inline-flex;
+    align-items: center;
+    margin-right: 8px;
+    color: var(--primary-color);
+    font-size: 18px;
+    height: 100%;
 }
 
 /* Responsive Design */
