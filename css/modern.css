@@ -156,10 +156,14 @@ body {
 }
 
 /* Experience Items */
-.experience-item {
+.experience-item, .advantage-item {
     margin-bottom: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     border-bottom: 1px solid rgba(46, 246, 46, 0.2);
+}
+
+.experience-item:last-child, .advantage-item:last-child {
+    border-bottom: none;
 }
 
 .experience-item h3 {
